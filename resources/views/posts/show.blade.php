@@ -6,6 +6,13 @@
             <!-- ここもどこに追加すべきか悩んだ -->
             <div class="mb-4 text-right">
                 <a href="{{ route('posts.edit',['post' => $post]) }}" class="btn btn-primary">編集する</a>
+                
+                <form action="{{ route('posts.destroy', ['post' => $post]) }}" style="display: inline-block;" method="POST">
+                @csrf
+                @method('DELETE')
+
+                <button class="btn btn-danger">削除する</button>
+            </form>
             </div>
 
             <h1 class="h5 mb-4">{{ $post->title }}</h1>
