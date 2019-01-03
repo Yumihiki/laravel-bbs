@@ -3,6 +3,11 @@
 @section('content')
     <div ckass="container mt-4">
         <div class="border p-4">
+            <!-- ここもどこに追加すべきか悩んだ -->
+            <div class="mb-4 text-right">
+                <a href="{{ route('posts.edit',['post' => $post]) }}" class="btn btn-primary">編集する</a>
+            </div>
+
             <h1 class="h5 mb-4">{{ $post->title }}</h1>
 
             <p class="mb-5"> {!! nl2br(e($post->body)) !!}</p>
@@ -23,3 +28,4 @@
             </section>
         </div>
     </div>
+@endsection
