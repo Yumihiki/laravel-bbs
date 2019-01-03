@@ -21,6 +21,12 @@
                         投稿日時 {{ $post->created_at->format('Y.m.d') }}
                     </span>
 
+                    <!-- ここもどこに記述すれば良かったのか分からなかった -->
+                    <p class="card-text">
+                        {!! nl2br(e(str_limit($post->body,200))) !!}
+                    </p>
+                    <a href="{{ route('posts.show', ['post' => $post]) }}">続きを読む</a>
+
                     @if ($post->comments->count())
                         <span class="badge badge-primary">
                             コメント {{ $post->comments->count() }}件
