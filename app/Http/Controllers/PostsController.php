@@ -56,7 +56,7 @@ class PostsController extends Controller
             'body' => 'required|max:2000',
         ]);
 
-        $post = Post::findPrFail($post_id);
+        $post = Post::findOrFail($post_id);
         $post->fill($params)->save();
 
         return redirect()->route('posts.show',['post' => $post]);
