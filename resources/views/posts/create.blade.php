@@ -34,9 +34,8 @@
 
                     <div class="mt-5">
                         <a href="{{ route('top') }}" class="btn btn-secondary">キャンセル</a>
-                    </div>
-
                     <button type="submit" class="btn btn-primary">投稿する</button>
+                    </div>
                 </fieldset>
             </form>
         </div>
