@@ -21,14 +21,14 @@
 
             <section>
                 <h2 class="h5 mb-4">コメント</h2>
-                <form action="{{ route('comments.store') }}">
+                <form action="{{ route('comments.store') }}" class="mb-4" method="POST">
                     @csrf
 
                     <input type="hidden" name="post_id" value="{{ $post->id }}">
                     <div class="form-group">
                         <label for="body">本文</label>
 
-                        <textarea name="body" id="body" class="form-control {{ $errors->has('body')? 'is-invalid': '' }}" rows="4">{{ old('body') }}</textarea>
+                        <textarea name="body" id="body" class="form-control {{ $errors->has('body') ? 'is-invalid': '' }}" rows="4">{{ old('body') }}</textarea>
                         @if ($errors->has('body'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('body') }}

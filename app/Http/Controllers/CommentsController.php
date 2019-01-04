@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\post;
+use App\Post;
 
 class CommentsController extends Controller
 {
@@ -14,10 +14,9 @@ class CommentsController extends Controller
             'body' => 'required|max:2000',
         ]);
 
-        $post = Post::findOrFail($post_id);
+        $post = Post::findOrFail('post_id');
         $post->comments()->create($params);
 
         return redirect()->route('posts.show',['post' => $post]);
-    }
     }
 }

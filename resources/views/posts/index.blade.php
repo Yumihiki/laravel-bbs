@@ -4,6 +4,7 @@
     <!--これをどこに記述したら良いのか分からなかった -->
     <div class="container mt-4">
         <div class="mb-4">
+            <a href="https://blog.hiroyuki90.com/articles/laravel-bbs/" class="btn btn-primary">参考サイト</a>
             <a href="{{ route('posts.create') }}" class="btn btn-primary">投稿を新規作成する</a>
         </div>
         @foreach ($posts as $post)

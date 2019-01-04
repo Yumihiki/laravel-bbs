@@ -64,7 +64,7 @@ class PostsController extends Controller
 
     public function destroy($post_id)
     {
-        $post = Post::findOrFall($post_id);
+        $post = Post::findOrFail($post_id);
 
         \DB::transaction(function() use($post) {
             $post->comments()->delete();
