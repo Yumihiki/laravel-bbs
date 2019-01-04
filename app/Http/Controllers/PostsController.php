@@ -40,7 +40,7 @@ class PostsController extends Controller
         ]);
     }
 
-    public function edit($psot_id)
+    public function edit($post_id)
     {
         $post = Post::findOrFail($post_id);
 

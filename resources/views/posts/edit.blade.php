@@ -21,7 +21,7 @@
                     <div class="form-group">
                         <label for="body">本文</label>
 
-                        <textarea name="body" id="body" class="form-cntrol {{$errors->has('body')?'is-invalid':'' }}" rows="4"> {{ old('body')?: $post->body }}</textarea>
+                        <textarea name="body" id="body" class="form-control {{$errors->has('body')?'is-invalid':'' }}" rows="4"> {{ old('body')?: $post->body }}</textarea>
                         @if ($errors->has('body'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('body') }}
