@@ -19,3 +19,7 @@ Route::resource('posts','PostsController',['only' => ['create', 'store', 'show',
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
