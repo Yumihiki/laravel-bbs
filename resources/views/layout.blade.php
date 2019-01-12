@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang ="en">
+<html lang ="ja">
 <head>
     <meta charset="UTF-8">
     <title>Laravel BBS</title>
@@ -8,7 +8,7 @@
 <body>
     <header class="navnar navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="{{url('')}}" >Laravel BBS</a>
+            <a class="navbar-brand" href="{{url('')}}" >Laravel 掲示板</a>
         </div>
     </header>
 </body>
