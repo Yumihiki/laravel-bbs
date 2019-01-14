@@ -19,4 +19,4 @@ Route::resource('posts','PostsController',['only' => ['create', 'store', 'show',
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/photos','PhotosController',['only' => ['create','store']]);
+//Route::resource('/photos','PhotosController',['only' => ['create','store']]);

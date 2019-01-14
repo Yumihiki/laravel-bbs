@@ -23,6 +23,7 @@ class PostsController extends Controller
     {
         $params = $request->validate([
             'title' => 'required|max:50',
+            'category_id' => 'required|max:10',
             'body' => 'required|max:2000',
         ]);
 

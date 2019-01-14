@@ -21,6 +21,15 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="category_id">カテゴリ</label>
+                        <select name="category_id" type="text">
+                            <option></option>
+                            <option value="1" name="1">ポエム</option>
+                            <option value="2" name="2">技術相談</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label for="body">本文</label>
 
                         <textarea name="body" id="body" class="form-control {{ $errors->has('body')?'is-invalid':''}}" rows="4">{{ old('body') }}</textarea>
