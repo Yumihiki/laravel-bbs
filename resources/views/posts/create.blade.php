@@ -30,6 +30,15 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="image">画像</label>
+                        <select name="image" type="file" id="file">
+                        @if ($errors->has('image'))
+                            {{ $errors->first('image') }}
+                        @endif
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label for="body">本文</label>
 
                         <textarea name="body" id="body" class="form-control {{ $errors->has('body')?'is-invalid':''}}" rows="4">{{ old('body') }}</textarea>

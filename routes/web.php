@@ -14,9 +14,9 @@
 Route::get('/', 'PostsController@index')->name('top');
 Route::resource('comments','CommentsController',['only' => ['store']]);
 Route::resource('posts','PostsController',['only' => ['create','store']]);
-Route::resource('posts','PostsController',['only' => ['create', 'store', 'show','edit','update','destroy']]);
+Route::resource('posts','PostsController',['only' => ['create', 'store', 'show','edit','update','destroy']])->middleware('auth');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-//Route::resource('/photos','PhotosController',['only' => ['create','store']]);
+Route::resource('/photos','PhotosController',['only' => ['create','store']]);
