@@ -4,19 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Auth;
 
 class PostsController extends Controller
 {
     public function index()
     {
-        $posts = Post::with(['comments'])->orderBy('created_at', 'desc')->paginate(10);
-
+        $posts = Post::withCount(['comments'])->orderBy('created_at', 'desc')->paginate(10);
         return view('posts.index',['posts' => $posts]);
     }
 
     public function create()
     {
-        return view('posts.create');
+        $auths = Auth::user();
+        return view('posts.create',['auths' => $auths]);
     }
 
     public function store(Request $request)
@@ -25,8 +26,10 @@ class PostsController extends Controller
             'title' => 'required|max:50',
             'category_id' => 'required|max:10',
             'body' => 'required|max:2000',
+            'user_id' => 'required|max:10',
         ]);
 
+        // $params = $request->all();
         Post::create($params);
 
         return redirect()->route('top');

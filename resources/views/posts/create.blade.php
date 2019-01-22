@@ -50,6 +50,11 @@
                         @endif
                     </div>
 
+                    <div class="form-group">
+                        <label for="user_id">投稿者:{{ $auths->name }}</label>
+                        <input type="hidden" name="user_id" value=" {{ $auths->id }}">
+                    </div>
+
                     <div class="mt-5">
                         <a href="{{ route('top') }}" class="btn btn-secondary">キャンセル</a>
                     <button type="submit" class="btn btn-primary">投稿する</button>

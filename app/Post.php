@@ -10,6 +10,7 @@ class Post extends Model
         'title',
         'category_id',
         'body',
+        'user_id',
     ];
 
     public function comments()
@@ -17,7 +18,13 @@ class Post extends Model
         return $this->hasMany('App\Comment');
     }
 
-    public function category(){
+    public function category()
+    {
         return $this->belongsTo('App\Category');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }
